@@ -33,27 +33,14 @@
             this.btnB = new System.Windows.Forms.Button();
             this.btnC = new System.Windows.Forms.Button();
             this.btnD = new System.Windows.Forms.Button();
-            this.btnLoadQuestions = new System.Windows.Forms.Button();
-            this.lblCountQuestions = new System.Windows.Forms.Label();
-            this.lblCounter = new System.Windows.Forms.Label();
             this.btnRandomQuestion = new System.Windows.Forms.Button();
             this.lblResult = new System.Windows.Forms.Label();
-            this.panelTest = new System.Windows.Forms.Panel();
-            this.testField03 = new System.Windows.Forms.Label();
-            this.testField02 = new System.Windows.Forms.Label();
-            this.testField01 = new System.Windows.Forms.Label();
             this.lblQuestion = new System.Windows.Forms.Label();
             this.flpAnswers = new System.Windows.Forms.FlowLayoutPanel();
             this.flpQuestion = new System.Windows.Forms.FlowLayoutPanel();
             this.panelInfo = new System.Windows.Forms.Panel();
+            this.btnLoadQuestions = new System.Windows.Forms.Button();
             this.flpStatistics = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnSettings = new System.Windows.Forms.Button();
-            this.panelTopScore = new System.Windows.Forms.Panel();
-            this.btnStart = new System.Windows.Forms.Button();
-            this.btnCloseApp = new System.Windows.Forms.Button();
-            this.btnMinimizeApp = new System.Windows.Forms.Button();
-            this.panelTop = new System.Windows.Forms.Panel();
-            this.lblResultCounter = new System.Windows.Forms.Label();
             this.lblCorrectAnswers = new System.Windows.Forms.Label();
             this.lblCorrectAnswersCounter = new System.Windows.Forms.Label();
             this.lblIncorrectAnswers = new System.Windows.Forms.Label();
@@ -61,16 +48,26 @@
             this.lblAnsweredQuestions = new System.Windows.Forms.Label();
             this.lblAnsweredQuestionsCounter = new System.Windows.Forms.Label();
             this.lblLeftQuestions = new System.Windows.Forms.Label();
-            this.lblAllQuestions = new System.Windows.Forms.Label();
             this.lblLeftQuestionsCounter = new System.Windows.Forms.Label();
+            this.lblAllQuestions = new System.Windows.Forms.Label();
             this.lblAllQuestionsCounter = new System.Windows.Forms.Label();
-            this.panelTest.SuspendLayout();
+            this.btnSettings = new System.Windows.Forms.Button();
+            this.panelTopScore = new System.Windows.Forms.Panel();
+            this.lblResultCounter = new System.Windows.Forms.Label();
+            this.btnStart = new System.Windows.Forms.Button();
+            this.btnCloseApp = new System.Windows.Forms.Button();
+            this.btnMinimizeApp = new System.Windows.Forms.Button();
+            this.panelTop = new System.Windows.Forms.Panel();
+            this.flpDebug = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblDebugCorrectAnswer = new System.Windows.Forms.Label();
+            this.lblDebugCorrectAnswerCounter = new System.Windows.Forms.Label();
             this.flpAnswers.SuspendLayout();
             this.flpQuestion.SuspendLayout();
             this.panelInfo.SuspendLayout();
             this.flpStatistics.SuspendLayout();
             this.panelTopScore.SuspendLayout();
             this.panelTop.SuspendLayout();
+            this.flpDebug.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnA
@@ -142,39 +139,6 @@
             this.btnD.UseVisualStyleBackColor = false;
             this.btnD.Click += new System.EventHandler(this.btnD_Click);
             // 
-            // btnLoadQuestions
-            // 
-            this.btnLoadQuestions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(177)))), ((int)(((byte)(210)))));
-            this.btnLoadQuestions.FlatAppearance.BorderSize = 0;
-            this.btnLoadQuestions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoadQuestions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnLoadQuestions.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btnLoadQuestions.Location = new System.Drawing.Point(205, 695);
-            this.btnLoadQuestions.Name = "btnLoadQuestions";
-            this.btnLoadQuestions.Size = new System.Drawing.Size(170, 50);
-            this.btnLoadQuestions.TabIndex = 5;
-            this.btnLoadQuestions.Text = "Załaduj pytania";
-            this.btnLoadQuestions.UseVisualStyleBackColor = false;
-            this.btnLoadQuestions.Click += new System.EventHandler(this.btnLoadQuestions_Click);
-            // 
-            // lblCountQuestions
-            // 
-            this.lblCountQuestions.AutoSize = true;
-            this.lblCountQuestions.Location = new System.Drawing.Point(915, 13);
-            this.lblCountQuestions.Name = "lblCountQuestions";
-            this.lblCountQuestions.Size = new System.Drawing.Size(91, 13);
-            this.lblCountQuestions.TabIndex = 6;
-            this.lblCountQuestions.Text = "Ilość pytań w puli:";
-            // 
-            // lblCounter
-            // 
-            this.lblCounter.AutoSize = true;
-            this.lblCounter.Location = new System.Drawing.Point(1012, 13);
-            this.lblCounter.Name = "lblCounter";
-            this.lblCounter.Size = new System.Drawing.Size(13, 13);
-            this.lblCounter.TabIndex = 7;
-            this.lblCounter.Text = "0";
-            // 
             // btnRandomQuestion
             // 
             this.btnRandomQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(177)))), ((int)(((byte)(210)))));
@@ -200,47 +164,6 @@
             this.lblResult.Size = new System.Drawing.Size(104, 37);
             this.lblResult.TabIndex = 9;
             this.lblResult.Text = "Wynik";
-            // 
-            // panelTest
-            // 
-            this.panelTest.BackColor = System.Drawing.Color.RosyBrown;
-            this.panelTest.Controls.Add(this.testField03);
-            this.panelTest.Controls.Add(this.testField02);
-            this.panelTest.Controls.Add(this.testField01);
-            this.panelTest.Controls.Add(this.lblCountQuestions);
-            this.panelTest.Controls.Add(this.lblCounter);
-            this.panelTest.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelTest.Location = new System.Drawing.Point(0, 750);
-            this.panelTest.Name = "panelTest";
-            this.panelTest.Size = new System.Drawing.Size(1091, 35);
-            this.panelTest.TabIndex = 11;
-            // 
-            // testField03
-            // 
-            this.testField03.AutoSize = true;
-            this.testField03.Location = new System.Drawing.Point(384, 13);
-            this.testField03.Name = "testField03";
-            this.testField03.Size = new System.Drawing.Size(35, 13);
-            this.testField03.TabIndex = 2;
-            this.testField03.Text = "label1";
-            // 
-            // testField02
-            // 
-            this.testField02.AutoSize = true;
-            this.testField02.Location = new System.Drawing.Point(267, 13);
-            this.testField02.Name = "testField02";
-            this.testField02.Size = new System.Drawing.Size(35, 13);
-            this.testField02.TabIndex = 1;
-            this.testField02.Text = "label1";
-            // 
-            // testField01
-            // 
-            this.testField01.AutoSize = true;
-            this.testField01.Location = new System.Drawing.Point(152, 13);
-            this.testField01.Name = "testField01";
-            this.testField01.Size = new System.Drawing.Size(35, 13);
-            this.testField01.TabIndex = 0;
-            this.testField01.Text = "label1";
             // 
             // lblQuestion
             // 
@@ -279,14 +202,33 @@
             // panelInfo
             // 
             this.panelInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(68)))));
+            this.panelInfo.Controls.Add(this.flpDebug);
+            this.panelInfo.Controls.Add(this.btnLoadQuestions);
             this.panelInfo.Controls.Add(this.flpStatistics);
             this.panelInfo.Controls.Add(this.btnSettings);
             this.panelInfo.Controls.Add(this.panelTopScore);
             this.panelInfo.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelInfo.Location = new System.Drawing.Point(802, 32);
             this.panelInfo.Name = "panelInfo";
-            this.panelInfo.Size = new System.Drawing.Size(289, 718);
+            this.panelInfo.Size = new System.Drawing.Size(289, 753);
             this.panelInfo.TabIndex = 15;
+            // 
+            // btnLoadQuestions
+            // 
+            this.btnLoadQuestions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(40)))), ((int)(((byte)(56)))));
+            this.btnLoadQuestions.FlatAppearance.BorderSize = 0;
+            this.btnLoadQuestions.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnLoadQuestions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoadQuestions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnLoadQuestions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(163)))), ((int)(((byte)(252)))));
+            this.btnLoadQuestions.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLoadQuestions.Location = new System.Drawing.Point(34, 607);
+            this.btnLoadQuestions.Name = "btnLoadQuestions";
+            this.btnLoadQuestions.Size = new System.Drawing.Size(219, 50);
+            this.btnLoadQuestions.TabIndex = 15;
+            this.btnLoadQuestions.Text = "Załaduj pytania";
+            this.btnLoadQuestions.UseVisualStyleBackColor = false;
+            this.btnLoadQuestions.Click += new System.EventHandler(this.btnLoadQuestions_Click);
             // 
             // flpStatistics
             // 
@@ -304,8 +246,128 @@
             this.flpStatistics.Location = new System.Drawing.Point(0, 216);
             this.flpStatistics.Name = "flpStatistics";
             this.flpStatistics.Padding = new System.Windows.Forms.Padding(2);
-            this.flpStatistics.Size = new System.Drawing.Size(289, 267);
+            this.flpStatistics.Size = new System.Drawing.Size(289, 142);
             this.flpStatistics.TabIndex = 14;
+            // 
+            // lblCorrectAnswers
+            // 
+            this.lblCorrectAnswers.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCorrectAnswers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblCorrectAnswers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(163)))), ((int)(((byte)(252)))));
+            this.lblCorrectAnswers.Location = new System.Drawing.Point(5, 2);
+            this.lblCorrectAnswers.Name = "lblCorrectAnswers";
+            this.lblCorrectAnswers.Size = new System.Drawing.Size(230, 27);
+            this.lblCorrectAnswers.TabIndex = 26;
+            this.lblCorrectAnswers.Text = "Prawidłowe odpowiedzi:";
+            this.lblCorrectAnswers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblCorrectAnswersCounter
+            // 
+            this.lblCorrectAnswersCounter.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCorrectAnswersCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblCorrectAnswersCounter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(163)))), ((int)(((byte)(252)))));
+            this.lblCorrectAnswersCounter.Location = new System.Drawing.Point(241, 2);
+            this.lblCorrectAnswersCounter.Name = "lblCorrectAnswersCounter";
+            this.lblCorrectAnswersCounter.Size = new System.Drawing.Size(42, 27);
+            this.lblCorrectAnswersCounter.TabIndex = 27;
+            this.lblCorrectAnswersCounter.Text = "0";
+            this.lblCorrectAnswersCounter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblIncorrectAnswers
+            // 
+            this.lblIncorrectAnswers.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblIncorrectAnswers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblIncorrectAnswers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(163)))), ((int)(((byte)(252)))));
+            this.lblIncorrectAnswers.Location = new System.Drawing.Point(5, 29);
+            this.lblIncorrectAnswers.Name = "lblIncorrectAnswers";
+            this.lblIncorrectAnswers.Size = new System.Drawing.Size(230, 27);
+            this.lblIncorrectAnswers.TabIndex = 28;
+            this.lblIncorrectAnswers.Text = "Błędne odpowiedzi:";
+            this.lblIncorrectAnswers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblIncorrectAnswersCounter
+            // 
+            this.lblIncorrectAnswersCounter.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblIncorrectAnswersCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblIncorrectAnswersCounter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(163)))), ((int)(((byte)(252)))));
+            this.lblIncorrectAnswersCounter.Location = new System.Drawing.Point(241, 29);
+            this.lblIncorrectAnswersCounter.Name = "lblIncorrectAnswersCounter";
+            this.lblIncorrectAnswersCounter.Size = new System.Drawing.Size(42, 27);
+            this.lblIncorrectAnswersCounter.TabIndex = 29;
+            this.lblIncorrectAnswersCounter.Text = "0";
+            this.lblIncorrectAnswersCounter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblAnsweredQuestions
+            // 
+            this.lblAnsweredQuestions.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblAnsweredQuestions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblAnsweredQuestions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(163)))), ((int)(((byte)(252)))));
+            this.lblAnsweredQuestions.Location = new System.Drawing.Point(5, 56);
+            this.lblAnsweredQuestions.Name = "lblAnsweredQuestions";
+            this.lblAnsweredQuestions.Size = new System.Drawing.Size(230, 27);
+            this.lblAnsweredQuestions.TabIndex = 30;
+            this.lblAnsweredQuestions.Text = "Udzielonych odpowiedzi:";
+            this.lblAnsweredQuestions.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblAnsweredQuestionsCounter
+            // 
+            this.lblAnsweredQuestionsCounter.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblAnsweredQuestionsCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblAnsweredQuestionsCounter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(163)))), ((int)(((byte)(252)))));
+            this.lblAnsweredQuestionsCounter.Location = new System.Drawing.Point(241, 56);
+            this.lblAnsweredQuestionsCounter.Name = "lblAnsweredQuestionsCounter";
+            this.lblAnsweredQuestionsCounter.Size = new System.Drawing.Size(42, 27);
+            this.lblAnsweredQuestionsCounter.TabIndex = 31;
+            this.lblAnsweredQuestionsCounter.Text = "0";
+            this.lblAnsweredQuestionsCounter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblLeftQuestions
+            // 
+            this.lblLeftQuestions.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblLeftQuestions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblLeftQuestions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(163)))), ((int)(((byte)(252)))));
+            this.lblLeftQuestions.Location = new System.Drawing.Point(5, 83);
+            this.lblLeftQuestions.Name = "lblLeftQuestions";
+            this.lblLeftQuestions.Size = new System.Drawing.Size(230, 27);
+            this.lblLeftQuestions.TabIndex = 32;
+            this.lblLeftQuestions.Text = "Pozostało pytań:";
+            this.lblLeftQuestions.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblLeftQuestionsCounter
+            // 
+            this.lblLeftQuestionsCounter.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblLeftQuestionsCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblLeftQuestionsCounter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(163)))), ((int)(((byte)(252)))));
+            this.lblLeftQuestionsCounter.Location = new System.Drawing.Point(241, 83);
+            this.lblLeftQuestionsCounter.Name = "lblLeftQuestionsCounter";
+            this.lblLeftQuestionsCounter.Size = new System.Drawing.Size(42, 27);
+            this.lblLeftQuestionsCounter.TabIndex = 33;
+            this.lblLeftQuestionsCounter.Text = "0";
+            this.lblLeftQuestionsCounter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblAllQuestions
+            // 
+            this.lblAllQuestions.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblAllQuestions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblAllQuestions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(163)))), ((int)(((byte)(252)))));
+            this.lblAllQuestions.Location = new System.Drawing.Point(5, 110);
+            this.lblAllQuestions.Name = "lblAllQuestions";
+            this.lblAllQuestions.Size = new System.Drawing.Size(230, 27);
+            this.lblAllQuestions.TabIndex = 34;
+            this.lblAllQuestions.Text = "Ilość wszystkich pytań:";
+            this.lblAllQuestions.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblAllQuestionsCounter
+            // 
+            this.lblAllQuestionsCounter.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblAllQuestionsCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblAllQuestionsCounter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(163)))), ((int)(((byte)(252)))));
+            this.lblAllQuestionsCounter.Location = new System.Drawing.Point(241, 110);
+            this.lblAllQuestionsCounter.Name = "lblAllQuestionsCounter";
+            this.lblAllQuestionsCounter.Size = new System.Drawing.Size(42, 27);
+            this.lblAllQuestionsCounter.TabIndex = 35;
+            this.lblAllQuestionsCounter.Text = "0";
+            this.lblAllQuestionsCounter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnSettings
             // 
@@ -314,10 +376,9 @@
             this.btnSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
+            this.btnSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(163)))), ((int)(((byte)(252)))));
             this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSettings.Location = new System.Drawing.Point(34, 653);
+            this.btnSettings.Location = new System.Drawing.Point(34, 663);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(219, 50);
             this.btnSettings.TabIndex = 13;
@@ -335,6 +396,18 @@
             this.panelTopScore.Name = "panelTopScore";
             this.panelTopScore.Size = new System.Drawing.Size(289, 216);
             this.panelTopScore.TabIndex = 11;
+            // 
+            // lblResultCounter
+            // 
+            this.lblResultCounter.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblResultCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblResultCounter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(163)))), ((int)(((byte)(252)))));
+            this.lblResultCounter.Location = new System.Drawing.Point(5, 56);
+            this.lblResultCounter.Name = "lblResultCounter";
+            this.lblResultCounter.Size = new System.Drawing.Size(278, 73);
+            this.lblResultCounter.TabIndex = 20;
+            this.lblResultCounter.Text = "0,0%";
+            this.lblResultCounter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnStart
             // 
@@ -386,137 +459,40 @@
             this.panelTop.Size = new System.Drawing.Size(1091, 32);
             this.panelTop.TabIndex = 17;
             // 
-            // lblResultCounter
+            // flpDebug
             // 
-            this.lblResultCounter.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblResultCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblResultCounter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(163)))), ((int)(((byte)(252)))));
-            this.lblResultCounter.Location = new System.Drawing.Point(5, 56);
-            this.lblResultCounter.Name = "lblResultCounter";
-            this.lblResultCounter.Size = new System.Drawing.Size(278, 73);
-            this.lblResultCounter.TabIndex = 20;
-            this.lblResultCounter.Text = "0,0%";
-            this.lblResultCounter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.flpDebug.Controls.Add(this.lblDebugCorrectAnswer);
+            this.flpDebug.Controls.Add(this.lblDebugCorrectAnswerCounter);
+            this.flpDebug.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flpDebug.Location = new System.Drawing.Point(0, 358);
+            this.flpDebug.Name = "flpDebug";
+            this.flpDebug.Padding = new System.Windows.Forms.Padding(2);
+            this.flpDebug.Size = new System.Drawing.Size(289, 37);
+            this.flpDebug.TabIndex = 16;
             // 
-            // lblCorrectAnswers
+            // lblDebugCorrectAnswer
             // 
-            this.lblCorrectAnswers.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblCorrectAnswers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblCorrectAnswers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(163)))), ((int)(((byte)(252)))));
-            this.lblCorrectAnswers.Location = new System.Drawing.Point(5, 2);
-            this.lblCorrectAnswers.Name = "lblCorrectAnswers";
-            this.lblCorrectAnswers.Size = new System.Drawing.Size(230, 27);
-            this.lblCorrectAnswers.TabIndex = 26;
-            this.lblCorrectAnswers.Text = "Prawidłowe odpowiedzi:";
-            this.lblCorrectAnswers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblDebugCorrectAnswer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblDebugCorrectAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblDebugCorrectAnswer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lblDebugCorrectAnswer.Location = new System.Drawing.Point(5, 2);
+            this.lblDebugCorrectAnswer.Name = "lblDebugCorrectAnswer";
+            this.lblDebugCorrectAnswer.Size = new System.Drawing.Size(230, 27);
+            this.lblDebugCorrectAnswer.TabIndex = 26;
+            this.lblDebugCorrectAnswer.Text = "Prawidłowa odpowiedź";
+            this.lblDebugCorrectAnswer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lblCorrectAnswersCounter
+            // lblDebugCorrectAnswerCounter
             // 
-            this.lblCorrectAnswersCounter.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblCorrectAnswersCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblCorrectAnswersCounter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(163)))), ((int)(((byte)(252)))));
-            this.lblCorrectAnswersCounter.Location = new System.Drawing.Point(241, 2);
-            this.lblCorrectAnswersCounter.Name = "lblCorrectAnswersCounter";
-            this.lblCorrectAnswersCounter.Size = new System.Drawing.Size(42, 27);
-            this.lblCorrectAnswersCounter.TabIndex = 27;
-            this.lblCorrectAnswersCounter.Text = "000";
-            this.lblCorrectAnswersCounter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblIncorrectAnswers
-            // 
-            this.lblIncorrectAnswers.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblIncorrectAnswers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblIncorrectAnswers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(163)))), ((int)(((byte)(252)))));
-            this.lblIncorrectAnswers.Location = new System.Drawing.Point(5, 29);
-            this.lblIncorrectAnswers.Name = "lblIncorrectAnswers";
-            this.lblIncorrectAnswers.Size = new System.Drawing.Size(230, 27);
-            this.lblIncorrectAnswers.TabIndex = 28;
-            this.lblIncorrectAnswers.Text = "Błędne odpowiedzi:";
-            this.lblIncorrectAnswers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblIncorrectAnswersCounter
-            // 
-            this.lblIncorrectAnswersCounter.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblIncorrectAnswersCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblIncorrectAnswersCounter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(163)))), ((int)(((byte)(252)))));
-            this.lblIncorrectAnswersCounter.Location = new System.Drawing.Point(241, 29);
-            this.lblIncorrectAnswersCounter.Name = "lblIncorrectAnswersCounter";
-            this.lblIncorrectAnswersCounter.Size = new System.Drawing.Size(42, 27);
-            this.lblIncorrectAnswersCounter.TabIndex = 29;
-            this.lblIncorrectAnswersCounter.Text = "000";
-            this.lblIncorrectAnswersCounter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblAnsweredQuestions
-            // 
-            this.lblAnsweredQuestions.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblAnsweredQuestions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblAnsweredQuestions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(163)))), ((int)(((byte)(252)))));
-            this.lblAnsweredQuestions.Location = new System.Drawing.Point(5, 56);
-            this.lblAnsweredQuestions.Name = "lblAnsweredQuestions";
-            this.lblAnsweredQuestions.Size = new System.Drawing.Size(230, 27);
-            this.lblAnsweredQuestions.TabIndex = 30;
-            this.lblAnsweredQuestions.Text = "Udzielonych odpowiedzi:";
-            this.lblAnsweredQuestions.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblAnsweredQuestionsCounter
-            // 
-            this.lblAnsweredQuestionsCounter.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblAnsweredQuestionsCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblAnsweredQuestionsCounter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(163)))), ((int)(((byte)(252)))));
-            this.lblAnsweredQuestionsCounter.Location = new System.Drawing.Point(241, 56);
-            this.lblAnsweredQuestionsCounter.Name = "lblAnsweredQuestionsCounter";
-            this.lblAnsweredQuestionsCounter.Size = new System.Drawing.Size(42, 27);
-            this.lblAnsweredQuestionsCounter.TabIndex = 31;
-            this.lblAnsweredQuestionsCounter.Text = "000";
-            this.lblAnsweredQuestionsCounter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblLeftQuestions
-            // 
-            this.lblLeftQuestions.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblLeftQuestions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblLeftQuestions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(163)))), ((int)(((byte)(252)))));
-            this.lblLeftQuestions.Location = new System.Drawing.Point(5, 83);
-            this.lblLeftQuestions.Name = "lblLeftQuestions";
-            this.lblLeftQuestions.Size = new System.Drawing.Size(230, 27);
-            this.lblLeftQuestions.TabIndex = 32;
-            this.lblLeftQuestions.Text = "Pozostało pytań:";
-            this.lblLeftQuestions.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblAllQuestions
-            // 
-            this.lblAllQuestions.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblAllQuestions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblAllQuestions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(163)))), ((int)(((byte)(252)))));
-            this.lblAllQuestions.Location = new System.Drawing.Point(5, 110);
-            this.lblAllQuestions.Name = "lblAllQuestions";
-            this.lblAllQuestions.Size = new System.Drawing.Size(230, 27);
-            this.lblAllQuestions.TabIndex = 34;
-            this.lblAllQuestions.Text = "Ilość wszystkich pytań:";
-            this.lblAllQuestions.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblLeftQuestionsCounter
-            // 
-            this.lblLeftQuestionsCounter.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblLeftQuestionsCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblLeftQuestionsCounter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(163)))), ((int)(((byte)(252)))));
-            this.lblLeftQuestionsCounter.Location = new System.Drawing.Point(241, 83);
-            this.lblLeftQuestionsCounter.Name = "lblLeftQuestionsCounter";
-            this.lblLeftQuestionsCounter.Size = new System.Drawing.Size(42, 27);
-            this.lblLeftQuestionsCounter.TabIndex = 33;
-            this.lblLeftQuestionsCounter.Text = "000";
-            this.lblLeftQuestionsCounter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblAllQuestionsCounter
-            // 
-            this.lblAllQuestionsCounter.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblAllQuestionsCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblAllQuestionsCounter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(163)))), ((int)(((byte)(252)))));
-            this.lblAllQuestionsCounter.Location = new System.Drawing.Point(241, 110);
-            this.lblAllQuestionsCounter.Name = "lblAllQuestionsCounter";
-            this.lblAllQuestionsCounter.Size = new System.Drawing.Size(42, 27);
-            this.lblAllQuestionsCounter.TabIndex = 35;
-            this.lblAllQuestionsCounter.Text = "000";
-            this.lblAllQuestionsCounter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblDebugCorrectAnswerCounter.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblDebugCorrectAnswerCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblDebugCorrectAnswerCounter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lblDebugCorrectAnswerCounter.Location = new System.Drawing.Point(241, 2);
+            this.lblDebugCorrectAnswerCounter.Name = "lblDebugCorrectAnswerCounter";
+            this.lblDebugCorrectAnswerCounter.Size = new System.Drawing.Size(42, 27);
+            this.lblDebugCorrectAnswerCounter.TabIndex = 27;
+            this.lblDebugCorrectAnswerCounter.Text = "0";
+            this.lblDebugCorrectAnswerCounter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // QuizForm
             // 
@@ -526,18 +502,14 @@
             this.ClientSize = new System.Drawing.Size(1091, 785);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.flpQuestion);
-            this.Controls.Add(this.btnLoadQuestions);
             this.Controls.Add(this.flpAnswers);
             this.Controls.Add(this.btnRandomQuestion);
             this.Controls.Add(this.panelInfo);
-            this.Controls.Add(this.panelTest);
             this.Controls.Add(this.panelTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "QuizForm";
             this.Text = "QuizApp";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.QuizForm_KeyDown);
-            this.panelTest.ResumeLayout(false);
-            this.panelTest.PerformLayout();
             this.flpAnswers.ResumeLayout(false);
             this.flpQuestion.ResumeLayout(false);
             this.flpQuestion.PerformLayout();
@@ -546,6 +518,7 @@
             this.panelTopScore.ResumeLayout(false);
             this.panelTopScore.PerformLayout();
             this.panelTop.ResumeLayout(false);
+            this.flpDebug.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -555,15 +528,8 @@
         private System.Windows.Forms.Button btnB;
         private System.Windows.Forms.Button btnC;
         private System.Windows.Forms.Button btnD;
-        private System.Windows.Forms.Button btnLoadQuestions;
-        private System.Windows.Forms.Label lblCountQuestions;
-        private System.Windows.Forms.Label lblCounter;
         private System.Windows.Forms.Button btnRandomQuestion;
         private System.Windows.Forms.Label lblResult;
-        private System.Windows.Forms.Panel panelTest;
-        private System.Windows.Forms.Label testField01;
-        private System.Windows.Forms.Label testField03;
-        private System.Windows.Forms.Label testField02;
         private System.Windows.Forms.Label lblQuestion;
         private System.Windows.Forms.FlowLayoutPanel flpAnswers;
         private System.Windows.Forms.FlowLayoutPanel flpQuestion;
@@ -586,6 +552,10 @@
         private System.Windows.Forms.Label lblLeftQuestionsCounter;
         private System.Windows.Forms.Label lblAllQuestions;
         private System.Windows.Forms.Label lblAllQuestionsCounter;
+        private System.Windows.Forms.Button btnLoadQuestions;
+        private System.Windows.Forms.FlowLayoutPanel flpDebug;
+        private System.Windows.Forms.Label lblDebugCorrectAnswer;
+        private System.Windows.Forms.Label lblDebugCorrectAnswerCounter;
     }
 }
 

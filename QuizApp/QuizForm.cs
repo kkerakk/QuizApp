@@ -9,11 +9,8 @@ namespace QuizApp
 {
     public partial class QuizForm : Form
     {
-
-
-
         private List<QuizQuestion> questionList = new List<QuizQuestion>();
-        string path = @"I:\_11\QuizSpreadSheet.csv";
+        private string selectedFilePath = "";
         private int correctAnswer = 0;
         private int goodAnswers = 0;
         private int badAnswers = 0;
@@ -24,12 +21,10 @@ namespace QuizApp
         public QuizForm()
         {
             InitializeComponent();
+            LoadPath();
             LoadQuestions();
             InitializeData();
-
-            panelTop.MouseDown += panelTop_MouseDown;
-            panelTop.MouseMove += panelTop_MouseMove;
-            panelTop.MouseUp += panelTop_MouseUp;
+            AttachMethods();
         }
         #region Moveable Application
 
@@ -42,6 +37,13 @@ namespace QuizApp
 
         private bool isDragging = false;
         private int mouseX, mouseY;
+
+        private void AttachMethods()
+        {
+            panelTop.MouseDown += panelTop_MouseDown;
+            panelTop.MouseMove += panelTop_MouseMove;
+            panelTop.MouseUp += panelTop_MouseUp;
+        }
         private void panelTop_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -58,7 +60,7 @@ namespace QuizApp
             {
                 int newX = this.Left + e.X - mouseX;
                 int newY = this.Top + e.Y - mouseY;
-                this.Location = new System.Drawing.Point(newX, newY);
+                this.Location = new Point(newX, newY);
             }
         }
 
@@ -77,42 +79,12 @@ namespace QuizApp
                     m.Result = IntPtr.Zero;
         }
         #endregion
-        public List<QuizQuestion> ParseCsv(string filePath)
-        {
-            List<QuizQuestion> questions = new List<QuizQuestion>();
-
-            using (TextFieldParser parser = new TextFieldParser(filePath))
-            {
-                parser.TextFieldType = FieldType.Delimited;
-                parser.SetDelimiters(";");
-
-                while (!parser.EndOfData)
-                {
-                    string[] fields = parser.ReadFields();
-
-                    if (fields.Length == 7) // Assuming 7 columns in the CSV
-                    {
-                        QuizQuestion question = new QuizQuestion
-                        {
-                            Question = fields[0],
-                            Options = new string[] { fields[1], fields[2], fields[3], fields[4] },
-                            CorrectAnswer = int.Parse(fields[5]),
-                            QuestionType = fields[6]
-                        };
-
-                        questions.Add(question);
-                    }
-                    else
-                    {
-                        Console.WriteLine("Invalid data format in CSV.");
-                    }
-                }
-            }
-            return questions;
-        }
 
         private void btnLoadQuestions_Click(object sender, EventArgs e)
         {
+            selectedFilePath = Helper.OpenFileWithDialog("*.csv", "*.json");
+            if (String.IsNullOrEmpty(selectedFilePath))
+                return;
             LoadQuestions();
         }
 
@@ -122,7 +94,6 @@ namespace QuizApp
             ResetButtonsColor();
 
             IsButtonEnabled(1);
-            DebugInApp();
         }
 
         private void btnA_Click(object sender, EventArgs e)
@@ -215,9 +186,8 @@ namespace QuizApp
             lblAnsweredQuestionsCounter.Text = "0";
             KeyPreview = true;
 
-            //visibility
-            panelTest.Visible = false;
-            btnLoadQuestions.Visible = false;
+            // visibility
+            flpDebug.Visible = false;
             flpAnswers.Visible = false;
             flpQuestion.Visible = false;
             btnRandomQuestion.Visible = false;
@@ -230,10 +200,13 @@ namespace QuizApp
                 item.ForeColor = Color.FromArgb(50, 60, 91);
             }
         }
+        private void LoadPath()
+        {
+            selectedFilePath = @"I:\_11\QuizSpreadSheet.csv";
+        }
         private void LoadQuestions()
         {            
-            questionList = ParseCsv(path);
-            lblCounter.Text = questionList.Count.ToString();
+            questionList = Helper.ParseCsv(selectedFilePath);
             lblAllQuestionsCounter.Text = questionList.Count.ToString();
             questionsLeft = questionList.Count;
             lblLeftQuestionsCounter.Text= questionList.Count.ToString();
@@ -262,7 +235,6 @@ namespace QuizApp
             lblAnsweredQuestionsCounter.Text = sumAnsweredQuestions.ToString();
 
             IsButtonEnabled(0);
-            DebugInApp();
         }
         private void CorrectAnswer(Button btn)
         {
@@ -280,7 +252,6 @@ namespace QuizApp
             lblAnsweredQuestionsCounter.Text = sumAnsweredQuestions.ToString();
 
             IsButtonEnabled(0);
-            DebugInApp();
         }
         /// <summary>
         /// set value: 0 - disabled
@@ -310,15 +281,8 @@ namespace QuizApp
         {
             if (e.KeyCode == Keys.F4)
             {
-                panelTest.Visible = !panelTest.Visible;
+                flpDebug.Visible = !flpDebug.Visible;
             }
-        }
-
-        private void DebugInApp()
-        {
-            testField01.Text = correctAnswer.ToString(); //test
-            testField02.Text = $"correct: {resultCorrect}"; //test
-            testField03.Text = $"total: {totalResult}"; //test
-        }
+        } 
     }
 }
