@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helper.cs" />
+    <Compile Include="ProgressBarColor.cs" />
     <Compile Include="QuizForm.cs">
       <SubType>Form</SubType>
     </Compile>

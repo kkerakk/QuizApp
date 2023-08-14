@@ -14,10 +14,12 @@ namespace QuizApp
         private int correctAnswer = 0;
         private int goodAnswers = 0;
         private int badAnswers = 0;
-        private int questionsLeft = 0;
+        private int amountQuestionsLeft = 0;
         private List<Button> buttons = new List<Button>();
         private float resultCorrect;
         private float totalResult;
+        private int amountAllQuestions = 0;
+        private static int progressBarValue = 0;
         public QuizForm()
         {
             InitializeComponent();
@@ -25,6 +27,9 @@ namespace QuizApp
             LoadQuestions();
             InitializeData();
             AttachMethods();
+            ResetStatistics();
+
+            //ProgressBarColor.SetState(pbCompleted,3);
         }
         #region Moveable Application
 
@@ -86,14 +91,20 @@ namespace QuizApp
             if (String.IsNullOrEmpty(selectedFilePath))
                 return;
             LoadQuestions();
+            ResetStatistics();
         }
 
         private void btnRandomQuestion_Click(object sender, EventArgs e)
         {
             GenerateQuestion();
             ResetButtonsColor();
-
             IsButtonEnabled(1);
+            Debug();
+        }
+
+        private void Debug()
+        {
+            lblDebugCorrectAnswerCounter.Text = correctAnswer.ToString();
         }
 
         private void btnA_Click(object sender, EventArgs e)
@@ -131,12 +142,13 @@ namespace QuizApp
         private void btnStart_Click(object sender, EventArgs e)
         {
             GenerateQuestion();
-            questionsLeft = questionList.Count;
-            lblLeftQuestionsCounter.Text = questionList.Count.ToString();
-            btnStart.Enabled = false;
+            //questionsLeft = questionList.Count;
+            //lblLeftQuestionsCounter.Text = questionList.Count.ToString();
+            //btnStart.Enabled = false;
             btnStart.Visible = false;
             flpQuestion.Visible = true;
             flpAnswers.Visible = true;
+            IsButtonEnabled(1);
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
@@ -155,22 +167,51 @@ namespace QuizApp
             this.WindowState = FormWindowState.Minimized;
         }
 
+        //private void GenerateQuestion()
+        //{
+        //    correctAnswer = 0;
+        //    var random = new Random();
+        //    int randomNumber = random.Next(0, questionList.Count);
+
+        //    btnRandomQuestion.Enabled = false;
+        //    btnRandomQuestion.Visible = false;
+
+        //    lblQuestion.Text = questionList[randomNumber].Question.ToString();
+        //    btnA.Text = questionList[randomNumber].Options[0].ToString();
+        //    btnB.Text = questionList[randomNumber].Options[1].ToString();
+        //    btnC.Text = questionList[randomNumber].Options[2].ToString();
+        //    btnD.Text = questionList[randomNumber].Options[3].ToString();
+
+        //    correctAnswer = questionList[randomNumber].CorrectAnswer;
+        //}
         private void GenerateQuestion()
         {
-            correctAnswer = 0;
-            var random = new Random();
-            int randomNumber = random.Next(0, questionList.Count);
+            if (questionList.Count == 0)
+            {
+                lblSummaryCounter.Text = CountPoints();
+                pbCompleted.Visible = false;
+                flpQuestion.Visible = false;
+                flpAnswers.Visible=false;
+                btnRandomQuestion.Visible = false;
+                panelSummary.Visible = true;
+                return;
+            }
+
+            int randomNumber = new Random().Next(0, questionList.Count);
+
+            QuizQuestion selectedQuestion = questionList[randomNumber];
+            questionList.RemoveAt(randomNumber);
 
             btnRandomQuestion.Enabled = false;
             btnRandomQuestion.Visible = false;
 
-            lblQuestion.Text = questionList[randomNumber].Question.ToString();
-            btnA.Text = questionList[randomNumber].Options[0].ToString();
-            btnB.Text = questionList[randomNumber].Options[1].ToString();
-            btnC.Text = questionList[randomNumber].Options[2].ToString();
-            btnD.Text = questionList[randomNumber].Options[3].ToString();
+            lblQuestion.Text = selectedQuestion.Question.ToString();
+            btnA.Text = selectedQuestion.Options[0].ToString();
+            btnB.Text = selectedQuestion.Options[1].ToString();
+            btnC.Text = selectedQuestion.Options[2].ToString();
+            btnD.Text = selectedQuestion.Options[3].ToString();
 
-            correctAnswer = questionList[randomNumber].CorrectAnswer;
+            correctAnswer = selectedQuestion.CorrectAnswer;
         }
         private void InitializeData()
         {
@@ -179,11 +220,6 @@ namespace QuizApp
             buttons.Add(btnC);
             buttons.Add(btnD);
 
-            // default values
-            lblCorrectAnswersCounter.Text = "0";
-            lblIncorrectAnswersCounter.Text = "0";
-            lblLeftQuestionsCounter.Text = "0";
-            lblAnsweredQuestionsCounter.Text = "0";
             KeyPreview = true;
 
             // visibility
@@ -191,6 +227,25 @@ namespace QuizApp
             flpAnswers.Visible = false;
             flpQuestion.Visible = false;
             btnRandomQuestion.Visible = false;
+        }
+        private void ResetStatistics()
+        {
+            lblCorrectAnswersCounter.Text = "0";
+            lblIncorrectAnswersCounter.Text = "0";
+            lblResultCounter.Text = "0";
+            lblAnsweredQuestionsCounter.Text = "0";
+
+            goodAnswers = 0;
+            badAnswers = 0;
+            resultCorrect = 0;
+            totalResult = 0;
+
+            ResetButtonsColor();
+
+            flpAnswers.Visible = false;
+            flpQuestion.Visible=false;
+            btnStart.Visible = true;
+            btnRandomQuestion.Visible=false;
         }
         private void ResetButtonsColor()
         {
@@ -207,9 +262,11 @@ namespace QuizApp
         private void LoadQuestions()
         {            
             questionList = Helper.ParseCsv(selectedFilePath);
-            lblAllQuestionsCounter.Text = questionList.Count.ToString();
-            questionsLeft = questionList.Count;
-            lblLeftQuestionsCounter.Text= questionList.Count.ToString();
+            amountAllQuestions = questionList.Count;
+            amountQuestionsLeft = questionList.Count;
+            pbCompleted.Value = 0;
+            lblAllQuestionsCounter.Text = amountAllQuestions.ToString();
+            lblLeftQuestionsCounter.Text= amountAllQuestions.ToString();
         }
         private void IncorrectAnswer(Button btn)
         {
@@ -227,13 +284,14 @@ namespace QuizApp
             btnRandomQuestion.Visible = true;
             totalResult++;
             badAnswers++;
-            questionsLeft--;
+            amountQuestionsLeft--;
             lblResultCounter.Text = CountPoints();
             lblIncorrectAnswersCounter.Text = badAnswers.ToString();
-            lblLeftQuestionsCounter.Text = questionsLeft.ToString();
+            lblLeftQuestionsCounter.Text = amountQuestionsLeft.ToString();
             int sumAnsweredQuestions = goodAnswers + badAnswers;
             lblAnsweredQuestionsCounter.Text = sumAnsweredQuestions.ToString();
 
+            pbCompleted.Value = CalcProgress();
             IsButtonEnabled(0);
         }
         private void CorrectAnswer(Button btn)
@@ -244,13 +302,14 @@ namespace QuizApp
             resultCorrect++;
             totalResult++;
             goodAnswers++;
-            questionsLeft--;
+            amountQuestionsLeft--;
             lblResultCounter.Text = CountPoints();            
             lblCorrectAnswersCounter.Text = goodAnswers.ToString();
-            lblLeftQuestionsCounter.Text = questionsLeft.ToString();
+            lblLeftQuestionsCounter.Text = amountQuestionsLeft.ToString();
             int sumAnsweredQuestions = goodAnswers + badAnswers;
             lblAnsweredQuestionsCounter.Text = sumAnsweredQuestions.ToString();
 
+            pbCompleted.Value = CalcProgress();
             IsButtonEnabled(0);
         }
         /// <summary>
@@ -267,6 +326,12 @@ namespace QuizApp
                     item.Enabled = true;
             }
         }
+        private int CalcProgress()
+        {
+
+            progressBarValue = (int)Math.Round((double)(amountAllQuestions - amountQuestionsLeft)*100 / amountAllQuestions);
+            return progressBarValue;
+        }
         private string CountPoints()
         {
             if (totalResult <= 0)
@@ -274,7 +339,6 @@ namespace QuizApp
                 return "0";
             }
             float percentage = resultCorrect/totalResult * 100;
-            //return $"{result}/{totalResult} ({percentage.ToString("F1")}%)";
             return $"{percentage.ToString("F1")}%";
         }
         private void QuizForm_KeyDown(object sender, KeyEventArgs e)

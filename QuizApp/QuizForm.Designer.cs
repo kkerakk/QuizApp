@@ -39,7 +39,12 @@
             this.flpAnswers = new System.Windows.Forms.FlowLayoutPanel();
             this.flpQuestion = new System.Windows.Forms.FlowLayoutPanel();
             this.panelInfo = new System.Windows.Forms.Panel();
+            this.flpDebug = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblDebugCorrectAnswer = new System.Windows.Forms.Label();
+            this.lblDebugCorrectAnswerCounter = new System.Windows.Forms.Label();
             this.btnLoadQuestions = new System.Windows.Forms.Button();
+            this.lblTest01 = new System.Windows.Forms.Label();
+            this.lblTestCounter01 = new System.Windows.Forms.Label();
             this.flpStatistics = new System.Windows.Forms.FlowLayoutPanel();
             this.lblCorrectAnswers = new System.Windows.Forms.Label();
             this.lblCorrectAnswersCounter = new System.Windows.Forms.Label();
@@ -53,21 +58,32 @@
             this.lblAllQuestionsCounter = new System.Windows.Forms.Label();
             this.btnSettings = new System.Windows.Forms.Button();
             this.panelTopScore = new System.Windows.Forms.Panel();
+            this.pbCompleted = new System.Windows.Forms.ProgressBar();
             this.lblResultCounter = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.Button();
             this.btnCloseApp = new System.Windows.Forms.Button();
             this.btnMinimizeApp = new System.Windows.Forms.Button();
             this.panelTop = new System.Windows.Forms.Panel();
-            this.flpDebug = new System.Windows.Forms.FlowLayoutPanel();
-            this.lblDebugCorrectAnswer = new System.Windows.Forms.Label();
-            this.lblDebugCorrectAnswerCounter = new System.Windows.Forms.Label();
+            this.panelSummary = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblSummaryCounter = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.flpName = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.flpOrdinalNr = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpResult = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpTime = new System.Windows.Forms.FlowLayoutPanel();
             this.flpAnswers.SuspendLayout();
             this.flpQuestion.SuspendLayout();
             this.panelInfo.SuspendLayout();
+            this.flpDebug.SuspendLayout();
             this.flpStatistics.SuspendLayout();
             this.panelTopScore.SuspendLayout();
             this.panelTop.SuspendLayout();
-            this.flpDebug.SuspendLayout();
+            this.panelSummary.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnA
@@ -157,11 +173,11 @@
             // lblResult
             // 
             this.lblResult.AutoSize = true;
-            this.lblResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblResult.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
-            this.lblResult.Location = new System.Drawing.Point(91, 129);
+            this.lblResult.Location = new System.Drawing.Point(106, 136);
             this.lblResult.Name = "lblResult";
-            this.lblResult.Size = new System.Drawing.Size(104, 37);
+            this.lblResult.Size = new System.Drawing.Size(88, 31);
             this.lblResult.TabIndex = 9;
             this.lblResult.Text = "Wynik";
             // 
@@ -213,6 +229,43 @@
             this.panelInfo.Size = new System.Drawing.Size(289, 753);
             this.panelInfo.TabIndex = 15;
             // 
+            // flpDebug
+            // 
+            this.flpDebug.Controls.Add(this.lblDebugCorrectAnswer);
+            this.flpDebug.Controls.Add(this.lblDebugCorrectAnswerCounter);
+            this.flpDebug.Controls.Add(this.lblTest01);
+            this.flpDebug.Controls.Add(this.lblTestCounter01);
+            this.flpDebug.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flpDebug.Location = new System.Drawing.Point(0, 358);
+            this.flpDebug.Name = "flpDebug";
+            this.flpDebug.Padding = new System.Windows.Forms.Padding(2);
+            this.flpDebug.Size = new System.Drawing.Size(289, 98);
+            this.flpDebug.TabIndex = 16;
+            // 
+            // lblDebugCorrectAnswer
+            // 
+            this.lblDebugCorrectAnswer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblDebugCorrectAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblDebugCorrectAnswer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lblDebugCorrectAnswer.Location = new System.Drawing.Point(5, 2);
+            this.lblDebugCorrectAnswer.Name = "lblDebugCorrectAnswer";
+            this.lblDebugCorrectAnswer.Size = new System.Drawing.Size(230, 27);
+            this.lblDebugCorrectAnswer.TabIndex = 26;
+            this.lblDebugCorrectAnswer.Text = "Prawidłowa odpowiedź";
+            this.lblDebugCorrectAnswer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblDebugCorrectAnswerCounter
+            // 
+            this.lblDebugCorrectAnswerCounter.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblDebugCorrectAnswerCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblDebugCorrectAnswerCounter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lblDebugCorrectAnswerCounter.Location = new System.Drawing.Point(241, 2);
+            this.lblDebugCorrectAnswerCounter.Name = "lblDebugCorrectAnswerCounter";
+            this.lblDebugCorrectAnswerCounter.Size = new System.Drawing.Size(42, 27);
+            this.lblDebugCorrectAnswerCounter.TabIndex = 27;
+            this.lblDebugCorrectAnswerCounter.Text = "0";
+            this.lblDebugCorrectAnswerCounter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // btnLoadQuestions
             // 
             this.btnLoadQuestions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(40)))), ((int)(((byte)(56)))));
@@ -229,6 +282,30 @@
             this.btnLoadQuestions.Text = "Załaduj pytania";
             this.btnLoadQuestions.UseVisualStyleBackColor = false;
             this.btnLoadQuestions.Click += new System.EventHandler(this.btnLoadQuestions_Click);
+            // 
+            // lblTest01
+            // 
+            this.lblTest01.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTest01.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblTest01.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lblTest01.Location = new System.Drawing.Point(5, 29);
+            this.lblTest01.Name = "lblTest01";
+            this.lblTest01.Size = new System.Drawing.Size(230, 27);
+            this.lblTest01.TabIndex = 28;
+            this.lblTest01.Text = "Prawidłowa odpowiedź";
+            this.lblTest01.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblTestCounter01
+            // 
+            this.lblTestCounter01.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTestCounter01.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblTestCounter01.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lblTestCounter01.Location = new System.Drawing.Point(241, 29);
+            this.lblTestCounter01.Name = "lblTestCounter01";
+            this.lblTestCounter01.Size = new System.Drawing.Size(42, 27);
+            this.lblTestCounter01.TabIndex = 29;
+            this.lblTestCounter01.Text = "0";
+            this.lblTestCounter01.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // flpStatistics
             // 
@@ -389,6 +466,7 @@
             // panelTopScore
             // 
             this.panelTopScore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(40)))), ((int)(((byte)(56)))));
+            this.panelTopScore.Controls.Add(this.pbCompleted);
             this.panelTopScore.Controls.Add(this.lblResultCounter);
             this.panelTopScore.Controls.Add(this.lblResult);
             this.panelTopScore.Dock = System.Windows.Forms.DockStyle.Top;
@@ -397,12 +475,22 @@
             this.panelTopScore.Size = new System.Drawing.Size(289, 216);
             this.panelTopScore.TabIndex = 11;
             // 
+            // pbCompleted
+            // 
+            this.pbCompleted.BackColor = System.Drawing.Color.Red;
+            this.pbCompleted.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pbCompleted.Location = new System.Drawing.Point(0, 0);
+            this.pbCompleted.Margin = new System.Windows.Forms.Padding(0);
+            this.pbCompleted.Name = "pbCompleted";
+            this.pbCompleted.Size = new System.Drawing.Size(289, 8);
+            this.pbCompleted.TabIndex = 21;
+            // 
             // lblResultCounter
             // 
             this.lblResultCounter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblResultCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblResultCounter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(163)))), ((int)(((byte)(252)))));
-            this.lblResultCounter.Location = new System.Drawing.Point(5, 56);
+            this.lblResultCounter.Location = new System.Drawing.Point(5, 63);
             this.lblResultCounter.Name = "lblResultCounter";
             this.lblResultCounter.Size = new System.Drawing.Size(278, 73);
             this.lblResultCounter.TabIndex = 20;
@@ -459,40 +547,137 @@
             this.panelTop.Size = new System.Drawing.Size(1091, 32);
             this.panelTop.TabIndex = 17;
             // 
-            // flpDebug
+            // panelSummary
             // 
-            this.flpDebug.Controls.Add(this.lblDebugCorrectAnswer);
-            this.flpDebug.Controls.Add(this.lblDebugCorrectAnswerCounter);
-            this.flpDebug.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flpDebug.Location = new System.Drawing.Point(0, 358);
-            this.flpDebug.Name = "flpDebug";
-            this.flpDebug.Padding = new System.Windows.Forms.Padding(2);
-            this.flpDebug.Size = new System.Drawing.Size(289, 37);
-            this.flpDebug.TabIndex = 16;
+            this.panelSummary.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(40)))), ((int)(((byte)(56)))));
+            this.panelSummary.Controls.Add(this.flpTime);
+            this.panelSummary.Controls.Add(this.flpResult);
+            this.panelSummary.Controls.Add(this.flowLayoutPanel2);
+            this.panelSummary.Controls.Add(this.flpOrdinalNr);
+            this.panelSummary.Controls.Add(this.label5);
+            this.panelSummary.Controls.Add(this.label4);
+            this.panelSummary.Controls.Add(this.flpName);
+            this.panelSummary.Controls.Add(this.label2);
+            this.panelSummary.Controls.Add(this.panel2);
+            this.panelSummary.Controls.Add(this.lblSummaryCounter);
+            this.panelSummary.Controls.Add(this.label1);
+            this.panelSummary.Location = new System.Drawing.Point(0, 32);
+            this.panelSummary.Name = "panelSummary";
+            this.panelSummary.Size = new System.Drawing.Size(802, 753);
+            this.panelSummary.TabIndex = 18;
+            this.panelSummary.Visible = false;
             // 
-            // lblDebugCorrectAnswer
+            // label1
             // 
-            this.lblDebugCorrectAnswer.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblDebugCorrectAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblDebugCorrectAnswer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.lblDebugCorrectAnswer.Location = new System.Drawing.Point(5, 2);
-            this.lblDebugCorrectAnswer.Name = "lblDebugCorrectAnswer";
-            this.lblDebugCorrectAnswer.Size = new System.Drawing.Size(230, 27);
-            this.lblDebugCorrectAnswer.TabIndex = 26;
-            this.lblDebugCorrectAnswer.Text = "Prawidłowa odpowiedź";
-            this.lblDebugCorrectAnswer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
+            this.label1.Location = new System.Drawing.Point(19, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(764, 73);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Twój wynik to:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblDebugCorrectAnswerCounter
+            // lblSummaryCounter
             // 
-            this.lblDebugCorrectAnswerCounter.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblDebugCorrectAnswerCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblDebugCorrectAnswerCounter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.lblDebugCorrectAnswerCounter.Location = new System.Drawing.Point(241, 2);
-            this.lblDebugCorrectAnswerCounter.Name = "lblDebugCorrectAnswerCounter";
-            this.lblDebugCorrectAnswerCounter.Size = new System.Drawing.Size(42, 27);
-            this.lblDebugCorrectAnswerCounter.TabIndex = 27;
-            this.lblDebugCorrectAnswerCounter.Text = "0";
-            this.lblDebugCorrectAnswerCounter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblSummaryCounter.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblSummaryCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblSummaryCounter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(163)))), ((int)(((byte)(252)))));
+            this.lblSummaryCounter.Location = new System.Drawing.Point(279, 106);
+            this.lblSummaryCounter.Name = "lblSummaryCounter";
+            this.lblSummaryCounter.Size = new System.Drawing.Size(278, 73);
+            this.lblSummaryCounter.TabIndex = 22;
+            this.lblSummaryCounter.Text = "0,0%";
+            this.lblSummaryCounter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(163)))), ((int)(((byte)(252)))));
+            this.panel2.Location = new System.Drawing.Point(28, 200);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(715, 4);
+            this.panel2.TabIndex = 23;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(163)))), ((int)(((byte)(252)))));
+            this.label2.Location = new System.Drawing.Point(42, 232);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 40);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "L.P.";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // flpName
+            // 
+            this.flpName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.flpName.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.flpName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(163)))), ((int)(((byte)(252)))));
+            this.flpName.Location = new System.Drawing.Point(110, 233);
+            this.flpName.Name = "flpName";
+            this.flpName.Size = new System.Drawing.Size(105, 40);
+            this.flpName.TabIndex = 25;
+            this.flpName.Text = "Nazwa";
+            this.flpName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(163)))), ((int)(((byte)(252)))));
+            this.label4.Location = new System.Drawing.Point(447, 233);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(100, 40);
+            this.label4.TabIndex = 26;
+            this.label4.Text = "Wynik";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(163)))), ((int)(((byte)(252)))));
+            this.label5.Location = new System.Drawing.Point(617, 232);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(92, 40);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "Czas";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // flpOrdinalNr
+            // 
+            this.flpOrdinalNr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(56)))));
+            this.flpOrdinalNr.Location = new System.Drawing.Point(48, 284);
+            this.flpOrdinalNr.Name = "flpOrdinalNr";
+            this.flpOrdinalNr.Size = new System.Drawing.Size(62, 457);
+            this.flpOrdinalNr.TabIndex = 28;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(56)))));
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(116, 284);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(331, 457);
+            this.flowLayoutPanel2.TabIndex = 29;
+            // 
+            // flpResult
+            // 
+            this.flpResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(56)))));
+            this.flpResult.Location = new System.Drawing.Point(453, 284);
+            this.flpResult.Name = "flpResult";
+            this.flpResult.Size = new System.Drawing.Size(164, 457);
+            this.flpResult.TabIndex = 30;
+            // 
+            // flpTime
+            // 
+            this.flpTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(56)))));
+            this.flpTime.Location = new System.Drawing.Point(623, 284);
+            this.flpTime.Name = "flpTime";
+            this.flpTime.Size = new System.Drawing.Size(162, 457);
+            this.flpTime.TabIndex = 31;
             // 
             // QuizForm
             // 
@@ -500,6 +685,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(251)))));
             this.ClientSize = new System.Drawing.Size(1091, 785);
+            this.Controls.Add(this.panelSummary);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.flpQuestion);
             this.Controls.Add(this.flpAnswers);
@@ -514,11 +700,12 @@
             this.flpQuestion.ResumeLayout(false);
             this.flpQuestion.PerformLayout();
             this.panelInfo.ResumeLayout(false);
+            this.flpDebug.ResumeLayout(false);
             this.flpStatistics.ResumeLayout(false);
             this.panelTopScore.ResumeLayout(false);
             this.panelTopScore.PerformLayout();
             this.panelTop.ResumeLayout(false);
-            this.flpDebug.ResumeLayout(false);
+            this.panelSummary.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -556,6 +743,21 @@
         private System.Windows.Forms.FlowLayoutPanel flpDebug;
         private System.Windows.Forms.Label lblDebugCorrectAnswer;
         private System.Windows.Forms.Label lblDebugCorrectAnswerCounter;
+        private System.Windows.Forms.ProgressBar pbCompleted;
+        private System.Windows.Forms.Label lblTest01;
+        private System.Windows.Forms.Label lblTestCounter01;
+        private System.Windows.Forms.Panel panelSummary;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblSummaryCounter;
+        private System.Windows.Forms.FlowLayoutPanel flpOrdinalNr;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label flpName;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.FlowLayoutPanel flpTime;
+        private System.Windows.Forms.FlowLayoutPanel flpResult;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
     }
 }
 
