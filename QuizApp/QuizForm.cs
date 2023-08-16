@@ -26,64 +26,13 @@ namespace QuizApp
             LoadPath();
             LoadQuestions();
             InitializeData();
-            AttachMethods();
+            //AttachMethods();
             ResetStatistics();
+
+            Helper.Instance.AttachMoveableWindow(this, panelTop); // panelTop należy dostosować do Twojego kodu
 
             //ProgressBarColor.SetState(pbCompleted,3);
         }
-        #region Moveable Application
-
-        
-        private const int WM_NCHITTEST = 0x0084;
-        private const int HT_CAPTION = 0x2;
-
-        [DllImport("user32.dll")]
-        private static extern IntPtr SendMessage(IntPtr hWnd, int Msg, IntPtr wParam, IntPtr lParam);
-
-        private bool isDragging = false;
-        private int mouseX, mouseY;
-
-        private void AttachMethods()
-        {
-            panelTop.MouseDown += panelTop_MouseDown;
-            panelTop.MouseMove += panelTop_MouseMove;
-            panelTop.MouseUp += panelTop_MouseUp;
-        }
-        private void panelTop_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                isDragging = true;
-                mouseX = e.X;
-                mouseY = e.Y;
-            }
-        }
-
-        private void panelTop_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (isDragging)
-            {
-                int newX = this.Left + e.X - mouseX;
-                int newY = this.Top + e.Y - mouseY;
-                this.Location = new Point(newX, newY);
-            }
-        }
-
-        private void panelTop_MouseUp(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-                isDragging = false;
-        }
-
-        protected override void WndProc(ref Message m)
-        {
-            base.WndProc(ref m);
-
-            if (m.Msg == WM_NCHITTEST)
-                if (m.Result.ToInt32() == HT_CAPTION)
-                    m.Result = IntPtr.Zero;
-        }
-        #endregion
 
         private void btnLoadQuestions_Click(object sender, EventArgs e)
         {
@@ -232,7 +181,7 @@ namespace QuizApp
         {
             lblCorrectAnswersCounter.Text = "0";
             lblIncorrectAnswersCounter.Text = "0";
-            lblResultCounter.Text = "0";
+            lblProgressCounter.Text = "0";
             lblAnsweredQuestionsCounter.Text = "0";
 
             goodAnswers = 0;
@@ -285,7 +234,7 @@ namespace QuizApp
             totalResult++;
             badAnswers++;
             amountQuestionsLeft--;
-            lblResultCounter.Text = CountPoints();
+            lblProgressCounter.Text = CalcProgressDouble().ToString()+"%";
             lblIncorrectAnswersCounter.Text = badAnswers.ToString();
             lblLeftQuestionsCounter.Text = amountQuestionsLeft.ToString();
             int sumAnsweredQuestions = goodAnswers + badAnswers;
@@ -303,7 +252,7 @@ namespace QuizApp
             totalResult++;
             goodAnswers++;
             amountQuestionsLeft--;
-            lblResultCounter.Text = CountPoints();            
+            lblProgressCounter.Text = CalcProgressDouble().ToString()+"%";
             lblCorrectAnswersCounter.Text = goodAnswers.ToString();
             lblLeftQuestionsCounter.Text = amountQuestionsLeft.ToString();
             int sumAnsweredQuestions = goodAnswers + badAnswers;
@@ -329,9 +278,19 @@ namespace QuizApp
         private int CalcProgress()
         {
 
-            progressBarValue = (int)Math.Round((double)(amountAllQuestions - amountQuestionsLeft)*100 / amountAllQuestions);
+            progressBarValue = (int)Math.Round((double)(amountAllQuestions - amountQuestionsLeft) * 100 / amountAllQuestions);
             return progressBarValue;
         }
+        private double CalcProgressDouble()
+        {
+            double progress = (double)(amountAllQuestions - amountQuestionsLeft) * 100 / amountAllQuestions;
+
+            // Zaokrąglenie do dwóch miejsc po przecinku
+            double roundedProgress = Math.Round(progress, 2);
+
+            return roundedProgress;
+        }
+
         private string CountPoints()
         {
             if (totalResult <= 0)

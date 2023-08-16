@@ -38,7 +38,10 @@
             this.btnChangeColor04 = new System.Windows.Forms.Button();
             this.btnCloseApp = new System.Windows.Forms.Button();
             this.flpUIColorButtons = new System.Windows.Forms.FlowLayoutPanel();
+            this.panelTop = new System.Windows.Forms.Panel();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.flpUIColorButtons.SuspendLayout();
+            this.panelTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblPath
@@ -46,7 +49,7 @@
             this.lblPath.AutoSize = true;
             this.lblPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblPath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(163)))), ((int)(((byte)(252)))));
-            this.lblPath.Location = new System.Drawing.Point(12, 83);
+            this.lblPath.Location = new System.Drawing.Point(12, 123);
             this.lblPath.Name = "lblPath";
             this.lblPath.Size = new System.Drawing.Size(274, 16);
             this.lblPath.TabIndex = 0;
@@ -55,7 +58,7 @@
             // txtPath
             // 
             this.txtPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtPath.Location = new System.Drawing.Point(15, 102);
+            this.txtPath.Location = new System.Drawing.Point(15, 142);
             this.txtPath.Name = "txtPath";
             this.txtPath.Size = new System.Drawing.Size(505, 35);
             this.txtPath.TabIndex = 2;
@@ -66,7 +69,7 @@
             this.btnPath.FlatAppearance.BorderSize = 0;
             this.btnPath.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPath.Image = ((System.Drawing.Image)(resources.GetObject("btnPath.Image")));
-            this.btnPath.Location = new System.Drawing.Point(538, 102);
+            this.btnPath.Location = new System.Drawing.Point(538, 142);
             this.btnPath.Name = "btnPath";
             this.btnPath.Size = new System.Drawing.Size(35, 35);
             this.btnPath.TabIndex = 3;
@@ -116,6 +119,7 @@
             this.btnChangeColor03.TabIndex = 6;
             this.btnChangeColor03.Text = "Jasny";
             this.btnChangeColor03.UseVisualStyleBackColor = false;
+            this.btnChangeColor03.Click += new System.EventHandler(this.btnChangeColor03_Click);
             // 
             // btnChangeColor04
             // 
@@ -130,13 +134,14 @@
             this.btnChangeColor04.TabIndex = 7;
             this.btnChangeColor04.Text = "Nieokreślony";
             this.btnChangeColor04.UseVisualStyleBackColor = false;
+            this.btnChangeColor04.Click += new System.EventHandler(this.btnChangeColor04_Click);
             // 
             // btnCloseApp
             // 
             this.btnCloseApp.FlatAppearance.BorderSize = 0;
             this.btnCloseApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCloseApp.Image = ((System.Drawing.Image)(resources.GetObject("btnCloseApp.Image")));
-            this.btnCloseApp.Location = new System.Drawing.Point(583, 1);
+            this.btnCloseApp.Location = new System.Drawing.Point(584, 3);
             this.btnCloseApp.Name = "btnCloseApp";
             this.btnCloseApp.Size = new System.Drawing.Size(27, 27);
             this.btnCloseApp.TabIndex = 12;
@@ -149,11 +154,33 @@
             this.flpUIColorButtons.Controls.Add(this.btnChangeColor02);
             this.flpUIColorButtons.Controls.Add(this.btnChangeColor03);
             this.flpUIColorButtons.Controls.Add(this.btnChangeColor04);
-            this.flpUIColorButtons.Location = new System.Drawing.Point(15, 12);
+            this.flpUIColorButtons.Location = new System.Drawing.Point(15, 52);
             this.flpUIColorButtons.Name = "flpUIColorButtons";
             this.flpUIColorButtons.Padding = new System.Windows.Forms.Padding(5);
             this.flpUIColorButtons.Size = new System.Drawing.Size(505, 56);
             this.flpUIColorButtons.TabIndex = 13;
+            // 
+            // panelTop
+            // 
+            this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(40)))), ((int)(((byte)(56)))));
+            this.panelTop.Controls.Add(this.btnCloseApp);
+            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTop.Location = new System.Drawing.Point(0, 0);
+            this.panelTop.Name = "panelTop";
+            this.panelTop.Size = new System.Drawing.Size(611, 32);
+            this.panelTop.TabIndex = 14;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(163)))), ((int)(((byte)(252)))));
+            this.checkBox1.Location = new System.Drawing.Point(15, 194);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(161, 20);
+            this.checkBox1.TabIndex = 16;
+            this.checkBox1.Text = "Usuwać pytania z puli?";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // Settings
             // 
@@ -161,8 +188,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(50)))), ((int)(((byte)(68)))));
             this.ClientSize = new System.Drawing.Size(611, 342);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.panelTop);
             this.Controls.Add(this.flpUIColorButtons);
-            this.Controls.Add(this.btnCloseApp);
             this.Controls.Add(this.btnPath);
             this.Controls.Add(this.txtPath);
             this.Controls.Add(this.lblPath);
@@ -170,6 +198,7 @@
             this.Name = "Settings";
             this.Text = "Settings";
             this.flpUIColorButtons.ResumeLayout(false);
+            this.panelTop.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -186,5 +215,7 @@
         private System.Windows.Forms.Button btnChangeColor04;
         private System.Windows.Forms.Button btnCloseApp;
         private System.Windows.Forms.FlowLayoutPanel flpUIColorButtons;
+        private System.Windows.Forms.Panel panelTop;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

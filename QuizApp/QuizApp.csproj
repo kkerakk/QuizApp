@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GlobalSettings.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="ProgressBarColor.cs" />
     <Compile Include="QuizForm.cs">
