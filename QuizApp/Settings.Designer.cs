@@ -117,7 +117,7 @@
             this.btnChangeColor03.Name = "btnChangeColor03";
             this.btnChangeColor03.Size = new System.Drawing.Size(115, 40);
             this.btnChangeColor03.TabIndex = 6;
-            this.btnChangeColor03.Text = "Jasny";
+            this.btnChangeColor03.Text = "Czarno-żółty";
             this.btnChangeColor03.UseVisualStyleBackColor = false;
             this.btnChangeColor03.Click += new System.EventHandler(this.btnChangeColor03_Click);
             // 
@@ -132,7 +132,7 @@
             this.btnChangeColor04.Name = "btnChangeColor04";
             this.btnChangeColor04.Size = new System.Drawing.Size(115, 40);
             this.btnChangeColor04.TabIndex = 7;
-            this.btnChangeColor04.Text = "Nieokreślony";
+            this.btnChangeColor04.Text = "Szary";
             this.btnChangeColor04.UseVisualStyleBackColor = false;
             this.btnChangeColor04.Click += new System.EventHandler(this.btnChangeColor04_Click);
             // 

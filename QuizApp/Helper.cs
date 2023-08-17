@@ -135,5 +135,10 @@ namespace QuizApp
                 isDragging = false;
         }
         #endregion
+        #region Change Color
+
+
+
+        #endregion
     }
 }

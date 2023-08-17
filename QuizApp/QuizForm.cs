@@ -26,12 +26,9 @@ namespace QuizApp
             LoadPath();
             LoadQuestions();
             InitializeData();
-            //AttachMethods();
             ResetStatistics();
 
-            Helper.Instance.AttachMoveableWindow(this, panelTop); // panelTop należy dostosować do Twojego kodu
-
-            //ProgressBarColor.SetState(pbCompleted,3);
+            Helper.Instance.AttachMoveableWindow(this, panelTop); // Moveable window
         }
 
         private void btnLoadQuestions_Click(object sender, EventArgs e)
@@ -284,10 +281,7 @@ namespace QuizApp
         private double CalcProgressDouble()
         {
             double progress = (double)(amountAllQuestions - amountQuestionsLeft) * 100 / amountAllQuestions;
-
-            // Zaokrąglenie do dwóch miejsc po przecinku
             double roundedProgress = Math.Round(progress, 2);
-
             return roundedProgress;
         }
 
@@ -306,6 +300,14 @@ namespace QuizApp
             {
                 flpDebug.Visible = !flpDebug.Visible;
             }
-        } 
+        }
+        public void ChangeColor()
+        {
+            panelTop.BackColor = GlobalSettings.Background1;
+            panelInfo.BackColor = GlobalSettings.Background1;
+            panelTopScore.BackColor = GlobalSettings.Background2;
+
+            lblProgressCounter.ForeColor = GlobalSettings.Font1;
+        }
     }
 }

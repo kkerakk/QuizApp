@@ -65,6 +65,8 @@
             this.btnMinimizeApp = new System.Windows.Forms.Button();
             this.panelTop = new System.Windows.Forms.Panel();
             this.panelSummary = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
             this.flpTime = new System.Windows.Forms.FlowLayoutPanel();
             this.flpResult = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
@@ -75,9 +77,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblSummaryCounter = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblSummary = new System.Windows.Forms.Label();
             this.flpAnswers.SuspendLayout();
             this.flpQuestion.SuspendLayout();
             this.panelInfo.SuspendLayout();
@@ -564,12 +564,32 @@
             this.panelSummary.Controls.Add(this.label2);
             this.panelSummary.Controls.Add(this.panel2);
             this.panelSummary.Controls.Add(this.lblSummaryCounter);
-            this.panelSummary.Controls.Add(this.label1);
+            this.panelSummary.Controls.Add(this.lblSummary);
             this.panelSummary.Location = new System.Drawing.Point(0, 32);
             this.panelSummary.Name = "panelSummary";
-            this.panelSummary.Size = new System.Drawing.Size(808, 753);
+            this.panelSummary.Size = new System.Drawing.Size(801, 753);
             this.panelSummary.TabIndex = 18;
             this.panelSummary.Visible = false;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(251)))));
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(631, 284);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(140, 457);
+            this.flowLayoutPanel1.TabIndex = 33;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
+            this.label3.Location = new System.Drawing.Point(654, 229);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(92, 40);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "Data";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // flpTime
             // 
@@ -608,7 +628,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
-            this.label5.Location = new System.Drawing.Point(371, 229);
+            this.label5.Location = new System.Drawing.Point(367, 229);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(92, 40);
             this.label5.TabIndex = 27;
@@ -620,7 +640,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
-            this.label4.Location = new System.Drawing.Point(510, 229);
+            this.label4.Location = new System.Drawing.Point(506, 229);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 40);
             this.label4.TabIndex = 26;
@@ -632,7 +652,7 @@
             this.flpName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.flpName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.flpName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
-            this.flpName.Location = new System.Drawing.Point(149, 229);
+            this.flpName.Location = new System.Drawing.Point(145, 229);
             this.flpName.Name = "flpName";
             this.flpName.Size = new System.Drawing.Size(105, 40);
             this.flpName.TabIndex = 25;
@@ -644,7 +664,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
-            this.label2.Location = new System.Drawing.Point(16, 229);
+            this.label2.Location = new System.Drawing.Point(12, 229);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 40);
             this.label2.TabIndex = 24;
@@ -655,7 +675,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(163)))), ((int)(((byte)(252)))));
             this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
-            this.panel2.Location = new System.Drawing.Point(28, 200);
+            this.panel2.Location = new System.Drawing.Point(21, 200);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(761, 5);
             this.panel2.TabIndex = 23;
@@ -665,44 +685,24 @@
             this.lblSummaryCounter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblSummaryCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblSummaryCounter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
-            this.lblSummaryCounter.Location = new System.Drawing.Point(282, 106);
+            this.lblSummaryCounter.Location = new System.Drawing.Point(278, 106);
             this.lblSummaryCounter.Name = "lblSummaryCounter";
             this.lblSummaryCounter.Size = new System.Drawing.Size(278, 73);
             this.lblSummaryCounter.TabIndex = 22;
             this.lblSummaryCounter.Text = "0,0%";
             this.lblSummaryCounter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // lblSummary
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
-            this.label1.Location = new System.Drawing.Point(22, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(764, 73);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "Twój wynik to:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
-            this.label3.Location = new System.Drawing.Point(658, 229);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 40);
-            this.label3.TabIndex = 32;
-            this.label3.Text = "Data";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(251)))));
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(631, 284);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(140, 457);
-            this.flowLayoutPanel1.TabIndex = 33;
+            this.lblSummary.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblSummary.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblSummary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(87)))));
+            this.lblSummary.Location = new System.Drawing.Point(18, 20);
+            this.lblSummary.Name = "lblSummary";
+            this.lblSummary.Size = new System.Drawing.Size(764, 73);
+            this.lblSummary.TabIndex = 21;
+            this.lblSummary.Text = "Twój wynik to:";
+            this.lblSummary.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // QuizForm
             // 
@@ -710,8 +710,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(251)))));
             this.ClientSize = new System.Drawing.Size(1091, 785);
-            this.Controls.Add(this.panelInfo);
             this.Controls.Add(this.panelSummary);
+            this.Controls.Add(this.panelInfo);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.flpQuestion);
             this.Controls.Add(this.flpAnswers);
@@ -772,7 +772,7 @@
         private System.Windows.Forms.Label lblTest01;
         private System.Windows.Forms.Label lblTestCounter01;
         private System.Windows.Forms.Panel panelSummary;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblSummary;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblSummaryCounter;
         private System.Windows.Forms.FlowLayoutPanel flpOrdinalNr;

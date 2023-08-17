@@ -9,10 +9,25 @@ namespace QuizApp
 {
     public static class GlobalSettings
     {
-        public static Color BackColor { get; set; }
-        public static Color FontColor { get; set; }
-        public static Color TopBarBackColor { get; set; }
-        public static Color ButtonBackColor { get; set; }
-        public static Color ButtonFontColor { get; set; }
+        /// <summary>
+        /// Main Background Color, mostly for panels
+        /// </summary>
+        public static Color Background1 { get; set; }
+        /// <summary>
+        /// Secondary Background Color, mostly for buttons
+        /// </summary>
+        public static Color Background2 { get; set; }
+        /// <summary>
+        /// Third Background Color
+        /// </summary>
+        public static Color Background3 { get; set; }    
+        /// <summary>
+        /// Main Font Color
+        /// </summary>
+        public static Color Font1 { get; set; }
+        /// <summary>
+        /// Secondary Font Color
+        /// </summary>
+        public static Color Font2 { get; set; }
     }
 }
