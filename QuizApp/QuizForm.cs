@@ -308,6 +308,13 @@ namespace QuizApp
             panelTopScore.BackColor = GlobalSettings.Background2;
 
             lblProgressCounter.ForeColor = GlobalSettings.Font1;
+
+            this.Refresh();
+        }
+
+        private void btnTest_Click(object sender, EventArgs e)
+        {
+            ChangeColor();
         }
     }
 }

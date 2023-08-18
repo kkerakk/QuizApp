@@ -78,6 +78,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblSummaryCounter = new System.Windows.Forms.Label();
             this.lblSummary = new System.Windows.Forms.Label();
+            this.btnTest = new System.Windows.Forms.Button();
             this.flpAnswers.SuspendLayout();
             this.flpQuestion.SuspendLayout();
             this.panelInfo.SuspendLayout();
@@ -237,11 +238,12 @@
             this.flpDebug.Controls.Add(this.lblDebugCorrectAnswerCounter);
             this.flpDebug.Controls.Add(this.lblTest01);
             this.flpDebug.Controls.Add(this.lblTestCounter01);
+            this.flpDebug.Controls.Add(this.btnTest);
             this.flpDebug.Dock = System.Windows.Forms.DockStyle.Top;
             this.flpDebug.Location = new System.Drawing.Point(0, 358);
             this.flpDebug.Name = "flpDebug";
             this.flpDebug.Padding = new System.Windows.Forms.Padding(2);
-            this.flpDebug.Size = new System.Drawing.Size(289, 98);
+            this.flpDebug.Size = new System.Drawing.Size(289, 142);
             this.flpDebug.TabIndex = 16;
             // 
             // lblDebugCorrectAnswer
@@ -704,6 +706,23 @@
             this.lblSummary.Text = "Twój wynik to:";
             this.lblSummary.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnTest
+            // 
+            this.btnTest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(40)))), ((int)(((byte)(56)))));
+            this.btnTest.FlatAppearance.BorderSize = 0;
+            this.btnTest.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnTest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnTest.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(163)))), ((int)(((byte)(252)))));
+            this.btnTest.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTest.Location = new System.Drawing.Point(5, 59);
+            this.btnTest.Name = "btnTest";
+            this.btnTest.Size = new System.Drawing.Size(219, 50);
+            this.btnTest.TabIndex = 30;
+            this.btnTest.Text = "Zmiana koloru";
+            this.btnTest.UseVisualStyleBackColor = false;
+            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
+            // 
             // QuizForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -785,6 +804,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnTest;
     }
 }
 
